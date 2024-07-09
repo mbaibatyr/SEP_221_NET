@@ -17,7 +17,6 @@ namespace SocketClient
             SendToServer();
         }
 
-
         async Task SendToServer()
         {
             await Task.Run(() =>
