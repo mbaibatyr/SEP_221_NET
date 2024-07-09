@@ -27,7 +27,7 @@ namespace SocketServer
                 Socket listener = new Socket(ad.AddressFamily, SocketType.Stream, ProtocolType.Tcp);
                 listener.Bind(ep);
                 listener.Listen(20);
-                //listBox1.Items.Add("Ñëóøàåì " + ep);
+                listBox1.Items.Add("Listen to " + ep);
                 Socket handler;
                 while (true)
                 {
@@ -38,7 +38,7 @@ namespace SocketServer
                     var st = Encoding.UTF8.GetString(bytes, 0, count);
                     //listBox1.Items.Add(st);
                     data += Encoding.UTF8.GetString(bytes, 0, count);
-                    string replay = "Ñïàñèáî çà " + data;
+                    string replay = "Получено от " + data;
                     byte[] response = Encoding.UTF8.GetBytes(replay);
                     handler.Send(response);
                     handler.Shutdown(SocketShutdown.Both);
