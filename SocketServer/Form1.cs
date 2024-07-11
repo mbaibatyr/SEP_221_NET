@@ -36,7 +36,7 @@ namespace SocketServer
                     string data = null;
                     int count = handler.Receive(bytes);
                     var st = Encoding.UTF8.GetString(bytes, 0, count);
-                    //listBox1.Items.Add(st);
+                    listBox1.Items.Add(st);
                     data += Encoding.UTF8.GetString(bytes, 0, count);
                     string replay = "Получено от " + data;
                     byte[] response = Encoding.UTF8.GetBytes(replay);
