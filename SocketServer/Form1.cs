@@ -56,8 +56,6 @@ namespace SocketServer
                 {
                     IPAddress localAddr = IPAddress.Parse("127.0.0.1");
                     tcpListener = new TcpListener(localAddr, int.Parse(tbPort.Text) + 1);
-
-                    // çàïóñê ñëóøàòåëÿ
                     tcpListener.Start();
                     listBox1.Items.Add("Listen to ");
                     while (true)
