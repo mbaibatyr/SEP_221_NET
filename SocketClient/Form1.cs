@@ -43,7 +43,7 @@ namespace SocketClient
                 TcpClient client = null;
                 try
                 {
-                    string message = tbHost.Text;
+                    string message = tbMessage.Text;
                     client = new TcpClient("127.0.0.1", int.Parse(tbPort.Text) + 1);
                     NetworkStream stream = client.GetStream();
 

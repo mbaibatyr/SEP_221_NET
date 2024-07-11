@@ -68,7 +68,7 @@ namespace SocketServer
                         listBox1.Items.Add("Получено от " + message);
 
                         StreamWriter writer = new StreamWriter(stream);
-                        //writer.WriteLine(tb _text.Text + message);
+                        writer.WriteLine("Ответка " + message);
 
                         writer.Close();
                         reader.Close();
