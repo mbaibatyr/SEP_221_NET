@@ -46,5 +46,54 @@ namespace SocketServer
                 }
             });
         }
+
+        async Task SendToServer2()
+        {
+            await Task.Run(() =>
+            {
+                TcpListener tcpListener = null;
+                try
+                {
+                    IPAddress localAddr = IPAddress.Parse("127.0.0.1");
+                    tcpListener = new TcpListener(localAddr, int.Parse(tbPort.Text) + 1);
+
+                    // çàïóñê ñëóøàòåëÿ
+                    tcpListener.Start();
+                    listBox1.Items.Add("Listen to ");
+                    while (true)
+                    {
+                        TcpClient client = tcpListener.AcceptTcpClient();
+                        NetworkStream stream = client.GetStream();
+
+                        StreamReader reader = new StreamReader(stream);
+                        string message = reader.ReadLine();
+                        listBox1.Items.Add("Получено от " + message);
+
+                        StreamWriter writer = new StreamWriter(stream);
+                        //writer.WriteLine(tb _text.Text + message);
+
+                        writer.Close();
+                        reader.Close();
+                        stream.Close();
+                        client.Close();
+                    }
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine(e.Message);
+                }
+                finally
+                {
+                    if (tcpListener != null)
+                        tcpListener.Stop();
+                }
+            });
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            SendToServer2();
+        }
     }
 }
