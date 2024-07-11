@@ -36,6 +36,7 @@
             button1 = new Button();
             tbMessage = new TextBox();
             label3 = new Label();
+            button2 = new Button();
             SuspendLayout();
             // 
             // listBox1
@@ -109,11 +110,22 @@
             label3.TabIndex = 6;
             label3.Text = "Message";
             // 
+            // button2
+            // 
+            button2.Location = new Point(153, 535);
+            button2.Name = "button2";
+            button2.Size = new Size(98, 23);
+            button2.TabIndex = 8;
+            button2.Text = "TCPClientSend";
+            button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(328, 570);
+            Controls.Add(button2);
             Controls.Add(tbMessage);
             Controls.Add(label3);
             Controls.Add(button1);
@@ -138,5 +150,6 @@
         private Button button1;
         private TextBox tbMessage;
         private Label label3;
+        private Button button2;
     }
 }

@@ -35,5 +35,48 @@ namespace SocketClient
                 sender.Close();
             });
         }
+
+        async Task SendToServer2()
+        {
+            await Task.Run(() =>
+            {
+                TcpClient client = null;
+                try
+                {
+                    string message = tbHost.Text;
+                    client = new TcpClient("127.0.0.1", int.Parse(tbPort.Text) + 1);
+                    NetworkStream stream = client.GetStream();
+
+                    // îòïðàâëÿåì ñîîáùåíèå
+                    StreamWriter writer = new StreamWriter(stream);
+                    writer.WriteLine(message);
+                    writer.Flush();
+
+                    // BinaryReader reader = new BinaryReader(new BufferedStream(stream));
+                    StreamReader reader = new StreamReader(stream);
+                    message = reader.ReadLine();
+                    listBox1.Items.Add("Получено от сервера : " + message);
+
+                    reader.Close();
+                    writer.Close();
+                    stream.Close();
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.Message);
+                }
+                finally
+                {
+                    if (client != null)
+                        client.Close();
+                }
+
+            });
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            SendToServer2();
+        }
     }
 }
