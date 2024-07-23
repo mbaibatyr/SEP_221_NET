@@ -1,11 +1,14 @@
-﻿namespace MyHTTPClient
+﻿using System.Net;
+
+namespace MyHTTPClient
 {
     internal class Program
     {
         static async Task Main(string[] args)
         {
             //await Method_1();
-            await Method_2();
+            //await Method_2();
+            Method_3();
         }
         static async Task<string> Method_1()
         {
@@ -28,6 +31,20 @@
                     string result2 = sr.ReadToEnd();
                     Console.WriteLine(result2);
                 }
+
+            }
+        }
+
+
+        static void Method_3()
+        {
+            using (var client = new WebClient())
+            {
+                var result = client.DownloadData("https://www.nationalbank.kz/file/download/101938");
+                File.WriteAllBytes("c:\\temp\\123.pdf", result);
+
+                var result2 = client.DownloadData("https://www.nationalbank.kz/file/download/102469");
+                File.WriteAllBytes("c:\\temp\\123.xlsx", result2);
 
             }
         }
