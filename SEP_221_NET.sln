@@ -13,7 +13,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UdpClient", "UdpClient\UdpC
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyHTTPServer", "MyHTTPServer\MyHTTPServer.csproj", "{9255EEE5-3B6F-4B6C-AA08-765A50440511}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyHTTPClient", "MyHTTPClient\MyHTTPClient.csproj", "{75287BCA-57E4-4727-98CF-D6F2D691B8A7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyHTTPClient", "MyHTTPClient\MyHTTPClient.csproj", "{75287BCA-57E4-4727-98CF-D6F2D691B8A7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyFTP", "MyFTP\MyFTP.csproj", "{134E3289-BEB5-4959-85E4-6812F89C3CEA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +47,10 @@ Global
 		{75287BCA-57E4-4727-98CF-D6F2D691B8A7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{75287BCA-57E4-4727-98CF-D6F2D691B8A7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{75287BCA-57E4-4727-98CF-D6F2D691B8A7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{134E3289-BEB5-4959-85E4-6812F89C3CEA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{134E3289-BEB5-4959-85E4-6812F89C3CEA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{134E3289-BEB5-4959-85E4-6812F89C3CEA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{134E3289-BEB5-4959-85E4-6812F89C3CEA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
